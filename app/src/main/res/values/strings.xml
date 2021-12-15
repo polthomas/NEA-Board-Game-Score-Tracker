@@ -21,6 +21,6 @@
     <string name="hint_game_name">Enter name of game</string>
     <string name="empty_not_saved">empty not saved</string>
     <string name="add_game">add game</string>
-    <string name="button_save">save button</string>
+    <string name="button_save">Save Game</string>
 
 </resources>

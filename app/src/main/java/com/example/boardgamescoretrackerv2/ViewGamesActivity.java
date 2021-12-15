@@ -16,7 +16,7 @@ public class ViewGamesActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_view_games);
 
         RecyclerView recyclerView = findViewById(R.id.recyclerview);
         final GameListAdapter adapter = new GameListAdapter(new GameListAdapter.GameDiff());
