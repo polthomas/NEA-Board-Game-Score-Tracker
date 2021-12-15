@@ -10,10 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BoardGameScoreTrackerV2">
         <activity
-            android:name=".GameEditActivity"
+            android:name=".ViewGamesActivity"
             android:exported="false" />
         <activity
-            android:name=".PlayEditActivity"
+            android:name=".GameEditActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

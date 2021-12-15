@@ -14,30 +14,32 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Making it notice when the log play button is clicked:
-        Button logPlayButton = findViewById(R.id.logPlayButton);
-        logPlayButton.setOnClickListener(new View.OnClickListener() {
+//        // Making it notice when the log play button is clicked:
+//        Button logPlayButton = findViewById(R.id.logPlayButton);
+//        logPlayButton.setOnClickListener(new View.OnClickListener() {
+//
+//            // Printing "Button Clicked" to Logcat when the button is pressed
+//            public void onClick(View v) {
+//                System.out.println("Button Clicked");
+//
+//                // Making the log play button launch the play edit activity
+//                Intent playEditActIntent = new Intent(getApplicationContext(), PlayEditActivity.class);
+//                startActivity(playEditActIntent);
+//            }
+//
+//        });
 
-            // Printing "Button Clicked" to Logcat when the button is pressed
+        //Game edit button moved to view games activity
+
+        // Making the 'view games' button launch the 'view games' screen
+        Button viewGamesButton = findViewById(R.id.viewGamesButton);
+        viewGamesButton.setOnClickListener(new View.OnClickListener() {
+
             public void onClick(View v) {
-                System.out.println("Button Clicked");
 
-                // Making the log play button launch the play edit activity
-                Intent playEditActIntent = new Intent(getApplicationContext(), PlayEditActivity.class);
-                startActivity(playEditActIntent);
-            }
-
-        });
-
-        // Making the 'add game' button launch the 'game edit' screen
-        Button addGameButton = findViewById(R.id.addGameButton);
-        addGameButton.setOnClickListener(new View.OnClickListener() {
-
-            public void onClick(View v) {
-
-                // Launching the game edit activity
-                Intent gameEditActIntent = new Intent(getApplicationContext(), GameEditActivity.class);
-                startActivity(gameEditActIntent);
+                // Launching the view games activity
+                Intent viewGamesActIntent = new Intent(getApplicationContext(), ViewGamesActivity.class);
+                startActivity(viewGamesActIntent);
             }
         });
     }

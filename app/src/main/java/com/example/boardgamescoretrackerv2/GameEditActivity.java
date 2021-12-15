@@ -4,39 +4,33 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+import android.text.TextUtils;
 import android.widget.Button;
 import android.widget.EditText;
 
 public class GameEditActivity extends AppCompatActivity {
 
+    public static final String EXTRA_REPLY = "com.example.android.gamelistsql.REPLY";
+
+    private EditText mEditGameView;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_edit);
-    }
+        mEditGameView = findViewById(R.id.edit_game);
 
-    public void saveGameName(View view) {
-
-        // Taking the value from the edit text field for the game name
-        EditText gameNameInput=findViewById(R.id.gameNameInput);
-        String gameName=gameNameInput.getText().toString();
-
-        // This game now needs to be added to the database when the button is pressed
-
-        // This code is triggered when the button is pressed
-        Button addGameToDBButton=findViewById(R.id.addGameToDBButton);
-        addGameToDBButton.setOnClickListener(new View.OnClickListener() {
-
-            public void onClick(View v) {
-
-                // Add game to database
-
-
+        final Button button = findViewById(R.id.button_save);
+        button.setOnClickListener(view -> {
+            Intent replyIntent = new Intent();
+            if (TextUtils.isEmpty(mEditGameView.getText())) {
+                setResult(RESULT_CANCELED, replyIntent);
+            } else {
+                String word = mEditGameView.getText().toString();
+                replyIntent.putExtra(EXTRA_REPLY, word);
+                setResult(RESULT_OK, replyIntent);
             }
-
+            finish();
         });
-
     }
-
 }
