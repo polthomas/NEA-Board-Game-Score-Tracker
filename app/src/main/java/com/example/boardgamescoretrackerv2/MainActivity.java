@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // Making the 'view players' button launch the 'view players' screen
-        Button viewPlayersButton = findViewById(R.id.viewPlayerssButton);
+        Button viewPlayersButton = findViewById(R.id.viewPlayersButton);
         viewPlayersButton.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {

@@ -5,12 +5,12 @@
     android:layout_height="match_parent">
 
     <EditText
-        android:id="@+id/edit_game"
+        android:id="@+id/edit_player"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minHeight="@dimen/min_height"
         android:fontFamily="sans-serif-light"
-        android:hint="@string/hint_game_name"
+        android:hint="@string/hint_player_name"
         android:inputType="textAutoComplete"
         android:layout_margin="@dimen/big_padding"
         android:textSize="18sp" />
@@ -20,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
-        android:text="@string/button_save_game"
+        android:text="@string/button_save_player"
         android:layout_margin="@dimen/big_padding"
         android:textColor="@color/buttonLabel" />
 

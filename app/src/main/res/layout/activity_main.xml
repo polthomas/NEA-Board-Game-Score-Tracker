@@ -18,15 +18,16 @@
         app:layout_constraintVertical_bias="0.68" />
 
     <Button
-        android:id="@+id/viewPlaysButton"
+        android:id="@+id/viewPlayersButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/view_plays_button_text"
+        android:text="@string/view_players_button_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.8" />
+        app:layout_constraintVertical_bias="0.469" />
 
     <Button
         android:id="@+id/viewGamesButton"
@@ -38,17 +39,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.26999998" />
-
-    <Button
-        android:id="@+id/addGameButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/add_game_button_text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.136" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

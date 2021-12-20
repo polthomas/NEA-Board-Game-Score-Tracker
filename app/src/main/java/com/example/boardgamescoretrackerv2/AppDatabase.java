@@ -12,10 +12,11 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 // Here we are defining the database the app uses.
-@Database(entities = {Game.class}, version = 1, exportSchema = false)
+@Database(entities = {Game.class, Player.class}, version = 1, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
 
     public abstract GameDao gameDao();
+    public abstract PlayerDao playerDao();
 
     // Singleton is defined to stop multiple instances of the database existing at once.
     private static volatile AppDatabase INSTANCE;
@@ -48,11 +49,15 @@ public abstract class AppDatabase extends RoomDatabase {
             databaseWriteExecutor.execute(() -> {
                 // Populate the database in the background.
                 // If you want to start with more words, just add them.
-                GameDao dao = INSTANCE.gameDao();
-                dao.deleteAll();
+                GameDao gdao = INSTANCE.gameDao();
+                gdao.deleteAll();
+                PlayerDao pdao = INSTANCE.playerDao();
+                pdao.deleteAll();
 
-                Game game = new Game("Settlers of Catan");
-                dao.insert(game);
+                Game game = new Game("Example game");
+                gdao.insert(game);
+                Player player = new Player("Example player");
+                pdao.insert(player);
             });
         }
     };
