@@ -20,7 +20,7 @@ public class GameListAdapter extends ListAdapter<Game, GameViewHolder> {
     @Override
     public void onBindViewHolder(GameViewHolder holder, int position) {
         Game current = getItem(position);
-        holder.bind(current.getGame());
+        holder.bind(current.getGameName());
     }
 
     static class GameDiff extends DiffUtil.ItemCallback<Game> {
@@ -32,7 +32,7 @@ public class GameListAdapter extends ListAdapter<Game, GameViewHolder> {
 
         @Override
         public boolean areContentsTheSame(@NonNull Game oldItem, @NonNull Game newItem) {
-            return oldItem.getGame().equals(newItem.getGame());
+            return oldItem.getGameName().equals(newItem.getGameName());
         }
     }
 }

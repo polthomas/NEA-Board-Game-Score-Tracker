@@ -22,7 +22,7 @@ public interface GameDao {
     @Query("DELETE FROM game_table")
     void deleteAll();
 
-    @Query("SELECT * FROM game_table ORDER BY game ASC")
+    @Query("SELECT * FROM game_table ORDER BY gameName ASC")
     LiveData<List<Game>> getAlphabetizedGames();
 
 }

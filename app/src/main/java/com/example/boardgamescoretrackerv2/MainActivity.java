@@ -42,5 +42,17 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(viewGamesActIntent);
             }
         });
+
+        // Making the 'view players' button launch the 'view players' screen
+        Button viewPlayersButton = findViewById(R.id.viewPlayerssButton);
+        viewPlayersButton.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+
+                // Launching the view games activity
+                Intent viewPlayersActIntent = new Intent(getApplicationContext(), ViewPlayersActivity.class);
+                startActivity(viewPlayersActIntent);
+            }
+        });
     }
 }
