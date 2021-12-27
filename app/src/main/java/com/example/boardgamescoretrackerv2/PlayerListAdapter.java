@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.ListAdapter;
 
 public class PlayerListAdapter extends ListAdapter<Player, PlayerViewHolder> {
 
-    public PlayerListAdapter(@NonNull DiffUtil.ItemCallback<Game> diffCallback) {
+    public PlayerListAdapter(@NonNull DiffUtil.ItemCallback<Player> diffCallback) {
         super(diffCallback);
     }
 

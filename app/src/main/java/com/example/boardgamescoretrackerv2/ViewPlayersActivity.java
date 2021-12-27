@@ -23,9 +23,9 @@ public class ViewPlayersActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        mAppViewModel = new ViewModelProvider(this).get(AppViewModel.class);
+        mPlayerViewModel = new ViewModelProvider(this).get(PlayerViewModel.class);
 
-        mAppViewModel.getAllPlayers().observe(this, players -> {
+        mPlayerViewModel.getAllPlayers().observe(this, players -> {
             // Update the cached copy of the words in the adapter.
             adapter.submitList(players);
         });
@@ -37,7 +37,7 @@ public class ViewPlayersActivity extends AppCompatActivity {
         });
     }
 
-    private AppViewModel mAppViewModel;
+    private PlayerViewModel mPlayerViewModel;
 
     public static final int NEW_PLAYER_ACTIVITY_REQUEST_CODE = 1;
 
@@ -46,7 +46,7 @@ public class ViewPlayersActivity extends AppCompatActivity {
 
         if (requestCode == NEW_PLAYER_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK) {
             Player player = new Player(data.getStringExtra(PlayerEditActivity.EXTRA_REPLY));
-            mAppViewModel.insert(player);
+            mPlayerViewModel.insert(player);
         } else {
             Toast.makeText(
                     getApplicationContext(),

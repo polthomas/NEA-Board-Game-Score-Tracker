@@ -7,25 +7,19 @@ import androidx.lifecycle.LiveData;
 
 import java.util.List;
 
-//Copied from RoomWordSample
-
-public class AppViewModel extends AndroidViewModel {
+public class GameViewModel extends AndroidViewModel {
 
     private AppRepository appRepository;
 
     private final LiveData<List<Game>> mAllGames;
-    private final LiveData<List<Player>> mAllPlayers;
 
-    public AppViewModel(Application application) {
+    public GameViewModel(Application application) {
         super(application);
         appRepository = new AppRepository(application);
         mAllGames = appRepository.getAllGames();
-        mAllPlayers = appRepository.getAllPlayers();
     }
 
     LiveData<List<Game>> getAllGames() { return mAllGames; }
-    LiveData<List<Player>> getAllPlayers() { return mAllPlayers; }
 
     public void insert(Game game) { appRepository.insert(game); }
-    public void insert(Player player) { appRepository.insert(player); }
 }
