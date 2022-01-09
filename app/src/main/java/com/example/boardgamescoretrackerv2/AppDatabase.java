@@ -31,7 +31,7 @@ public abstract class AppDatabase extends RoomDatabase {
                 if (INSTANCE == null) {
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
                             AppDatabase.class, "app_database")
-                            .addCallback(sRoomDatabaseCallback)
+                            .addCallback(sAppDatabaseCallback)
                             .build();
                 }
             }
@@ -39,16 +39,14 @@ public abstract class AppDatabase extends RoomDatabase {
         return INSTANCE;
     }
 
-    private static RoomDatabase.Callback sRoomDatabaseCallback = new RoomDatabase.Callback() {
+    private static AppDatabase.Callback sAppDatabaseCallback = new RoomDatabase.Callback() {
         @Override
         public void onCreate(@NonNull SupportSQLiteDatabase db) {
             super.onCreate(db);
 
-            // If you want to keep data through app restarts,
-            // comment out the following block
+            // Comment out this block to keep data through app restarts:
             databaseWriteExecutor.execute(() -> {
-                // Populate the database in the background.
-                // If you want to start with more words, just add them.
+                // Populates the database in the background:
                 GameDao gdao = INSTANCE.gameDao();
                 gdao.deleteAll();
                 PlayerDao pdao = INSTANCE.playerDao();

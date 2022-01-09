@@ -23,6 +23,6 @@ public interface PlayerDao {
     void deleteAll();
 
     @Query("SELECT * FROM player_table ORDER BY playerName ASC")
-    LiveData<List<Game>> getAlphabetizedPlayers();
+    LiveData<List<Player>> getAlphabetizedPlayers();
 
 }
